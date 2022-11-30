@@ -11,8 +11,8 @@ public class StartApp {
     public static void iniciarDicionario() {
         Scanner scanner = new Scanner(System.in);
         int escolha;
-        String[] dicionarioIngles = new String[3];
-        String[] dicionarioPortugues = new String[3];
+        String[] dicionarioIngles = new String[100];
+        String[] dicionarioPortugues = new String[100];
 
         do {
             printMenu();
