@@ -170,13 +170,25 @@ public class StartApp {
 
     public static void imprimiDicionario(String[] dicionarioIngles) {
         int length = retornaQuantidadeCadastradas(dicionarioIngles);
-        for(int i = 0; i <= length; i++) {
-            if(dicionarioIngles[i] != null && i < length - 1) System.out.print(dicionarioIngles[i] + " - ");
-            else if(dicionarioIngles[i] != null) {
-                System.out.println(dicionarioIngles[i]);
-                System.out.println();
+        if(length == dicionarioIngles.length){
+            length -= 1;
+            for(int i = 0; i <= length; i++) {
+                if(dicionarioIngles[i] != null && i < length) System.out.print(dicionarioIngles[i] + " - ");
+                else if(dicionarioIngles[i] != null) {
+                    System.out.println(dicionarioIngles[i]);
+                    System.out.println();
+                }
+            }
+        } else {
+            for(int i = 0; i <= length; i++) {
+                if(dicionarioIngles[i] != null && i < length - 1) System.out.print(dicionarioIngles[i] + " - ");
+                else if(dicionarioIngles[i] != null) {
+                    System.out.println(dicionarioIngles[i]);
+                    System.out.println();
+                }
             }
         }
+
     }
 
     public static void alterarPalavra(int index, String[] dicionarioIngles, String[] dicionarioPortugues, String palavra) {
