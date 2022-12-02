@@ -152,7 +152,7 @@ public class StartApp {
             String palavra = scanner.nextLine();
             int index = retornaIndex(dicionarioIngles, palavra);
             if(index != -1) {
-                consultarSignificado(index, dicionarioPortugues, palavra);
+                consultarSignificado(index, dicionarioIngles, dicionarioPortugues);
             } else {
                 System.out.println("Palavra não encontrada!");
                 System.out.println();
@@ -163,8 +163,8 @@ public class StartApp {
         }
     }
 
-    public static void consultarSignificado(int index, String[] dicionarioPortugues, String palavra) {
-        System.out.println("O significado da palavra " + palavra + " é: " + dicionarioPortugues[index]);
+    public static void consultarSignificado(int index, String[] dicionarioIngles, String[] dicionarioPortugues) {
+        System.out.println("O significado da palavra " + dicionarioIngles[index] + " é: " + dicionarioPortugues[index]);
         System.out.println();
     }
 
@@ -212,7 +212,7 @@ public class StartApp {
     public static int retornaIndex(String[] dicionarioIngles, String palavra) {
         int index = -1;
         for(int i = 0; i < dicionarioIngles.length; i++) {
-            if(palavra.equals(dicionarioIngles[i])) {
+            if(palavra.equalsIgnoreCase(dicionarioIngles[i])) {
                 index = i;
                 break;
             }
